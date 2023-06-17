@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
                 case CardType.Jet:
                     Debug.Log("Jet attack");
                     break;
-                case CardType.trench:
+                case CardType.Trench:
                     Debug.Log("trench attack");
                     break;
                 case CardType.Doctor:

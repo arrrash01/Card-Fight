@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1747a1955ce34874fa92a809a550068c, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  cardName: 
-  energyCost: 0
+  cardName: "\u062A\u06A9 \u062A\u06CC\u0631\u0627\u0646\u062F\u0627\u0632"
+  energyCost: 3
   hp: 0
   damage: 0
-  type: 0
+  type: 12
   artwork: {fileID: 0}
   description: 

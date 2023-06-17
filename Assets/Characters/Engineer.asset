@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1747a1955ce34874fa92a809a550068c, type: 3}
   m_Name: Engineer
   m_EditorClassIdentifier: 
-  cardName: 
-  energyCost: 0
-  hp: 0
-  damage: 0
-  type: 0
+  cardName: "\u0645\u0647\u0646\u062F\u0633"
+  energyCost: 4
+  hp: 1
+  damage: 1
+  type: 7
   artwork: {fileID: 0}
   description: 

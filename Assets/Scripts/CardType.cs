@@ -9,7 +9,7 @@ public enum CardType
     Helli,
     MachineGun,
     Jet,
-    trench,
+    Trench,
     Doctor,
     Engineer,
     Grenade,
