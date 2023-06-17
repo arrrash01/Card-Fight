@@ -12,5 +12,6 @@ public class Card : ScriptableObject
     public CardType type;
     public Sprite artwork;
     public string description;
-
+    public bool isHuman;
+    public bool isFacility;
 }
