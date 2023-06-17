@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     {
         if (turn == 1)
         {
-            if (player.playerDeck.Count >= 1 and player.playerHand.Count<5)
+            if (player.playerDeck.Count >= 1 || player.playerHand.Count<5)
             {
                 Card randCard = player.playerDeck[Random.Range(0, player.playerDeck.Count)];
                 player.playerDeck.Remove(randCard);
