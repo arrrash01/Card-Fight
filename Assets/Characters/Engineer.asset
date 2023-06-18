@@ -17,5 +17,8 @@ MonoBehaviour:
   hp: 1
   damage: 1
   type: 7
-  artwork: {fileID: 0}
+  Blueartwork: {fileID: 21300000, guid: 06ecebac56fccbb48a552db95a6aa3dc, type: 3}
+  Redartwork: {fileID: 21300000, guid: 4e7899f94652b104384f55d467778ce7, type: 3}
   description: 
+  isHuman: 1
+  isFacility: 0

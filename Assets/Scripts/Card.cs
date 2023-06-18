@@ -10,7 +10,8 @@ public class Card : ScriptableObject
     public int hp;
     public int damage;
     public CardType type;
-    public Sprite artwork;
+    public Sprite Blueartwork;
+    public Sprite Redartwork;
     public string description;
     public bool isHuman;
     public bool isFacility;

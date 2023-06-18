@@ -24,12 +24,13 @@ public class GameManager : MonoBehaviour
 
     public void PlaceCard(Card pCard)
     {
-        for (int i = player.availableSlots.Length-1;i >= 0; i--)
+        for (int i = 0;i < player.availableSlots.Length; i++)
         {
             if (player.availableSlots[i])
             {
                 player.availableSlots[i] = false;
                 player.playerBoard.Add(pCard);
+                return;
             }
         }
     }
@@ -347,9 +348,7 @@ public class GameManager : MonoBehaviour
                     }
                     player.energy -= attacker.energyCost;
                 }
-                break;
-            case CardType.Terrorist: 
-                Debug.Log("Terrorist attack"); 
+
                 break;
             case CardType.Tesla: 
                 Debug.Log("Tesla attack");
@@ -369,6 +368,58 @@ public class GameManager : MonoBehaviour
                 }
                 player.energy -= attacker.energyCost;
                 break;
+            case CardType.ElectricTower:
+                Debug.Log("ElectricTower attack");
+                break;
+            case CardType.Defense:
+                Debug.Log("Defense attack");
+                break;
+            case CardType.AntiAir:
+                Debug.Log("AntiAir attack");
+                break;
+            case CardType.ChemicalBomb:
+                Debug.Log("ChemicalBomb attack");
+                break;
+            case CardType.Radioactive:
+                Debug.Log("Radioactive attack");
+                break;
+            case CardType.Mortar:
+                Debug.Log("Mortar attack");
+                break;
+            case CardType.Microwave:
+                Debug.Log("Microwave attack");
+                break;
+            case CardType.Laser:
+                Debug.Log("Laser attack");
+                break;
+            case CardType.Dolphin:
+                Debug.Log("Dolphin attack");
+                break;
+            case CardType.Dynamite:
+                Debug.Log("Dynamite attack");
+                break;
+            case CardType.Hundred:
+                Debug.Log("Hundred attack");
+                break;
+            case CardType.Submarine:
+                Debug.Log("Submarine attack");
+                break;
+            case CardType.BattleShip:
+                Debug.Log("BattleShip attack");
+                break;
+            case CardType.Hacker:
+                Debug.Log("Hacker attack");
+                break;
+            case CardType.Cowboy:
+                Debug.Log("Cowboy attack");
+                break;
+            case CardType.Firecracker:
+                Debug.Log("Firecracker attack");
+                break;
+            case CardType.Drone:
+                Debug.Log("Drone attack");
+                break;
+            
         }
     }
     public void DrawCard(Player p)
@@ -395,7 +446,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             DrawCard(p);
-            Debug.Log(p.playerHand.Count);
         }
     } 
     private void Update()
@@ -407,15 +457,18 @@ public class GameManager : MonoBehaviour
     {
         player = new Player();
         InitializeDeck(player);
-        Debug.Log(player.ToString());
         InitializeHand(player);
+        Debug.Log(player.ToString());
+        
         enemy = new Player();
         InitializeDeck(enemy);
         InitializeHand(enemy);
-        
-        Debug.Log(player.ToString());
-        Debug.Log(enemy.ToString());
-        
+
+        PlayCard(player.playerHand[1]);
+        player.cardPlayed = false;
+        PlayCard(player.playerHand[1]);
+        Debug.Log(player.playerBoard.Count);
+        Debug.Log(player.availableSlots[0]);
         
     }
 }

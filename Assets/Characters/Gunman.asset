@@ -15,7 +15,10 @@ MonoBehaviour:
   cardName: "\u062A\u0641\u0646\u06AF \u062F\u0627\u0631"
   energyCost: 2
   hp: 1
-  damage: 1
+  damage: 2
   type: 0
-  artwork: {fileID: 0}
+  Blueartwork: {fileID: 21300000, guid: 048c94f5dbbaa534db328ac3b937b266, type: 3}
+  Redartwork: {fileID: 21300000, guid: 196ccf5ea538f81468fa8bd043559d53, type: 3}
   description: 
+  isHuman: 1
+  isFacility: 0

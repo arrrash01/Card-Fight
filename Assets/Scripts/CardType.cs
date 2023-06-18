@@ -17,7 +17,24 @@ public enum CardType
     RocketLauncher,
     RPG,
     Sniper,
-    Terrorist,
-    Tesla
+    Tesla,
+    Diver,
+    ElectricTower,
+    Defense,
+    AntiAir,
+    ChemicalBomb,
+    Radioactive,
+    Mortar,
+    Microwave,
+    Laser,
+    Dolphin,
+    Dynamite,
+    Hundred,
+    Submarine,
+    BattleShip,
+    Hacker,
+    Cowboy,
+    Firecracker,
+    Drone
 
 }
