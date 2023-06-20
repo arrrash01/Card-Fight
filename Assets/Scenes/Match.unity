@@ -286,9 +286,10 @@ GameObject:
   - component: {fileID: 50715297}
   - component: {fileID: 50715298}
   - component: {fileID: 50715299}
+  - component: {fileID: 50715300}
   m_Layer: 0
   m_Name: CardSlot2
-  m_TagString: Untagged
+  m_TagString: Red Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,6 +375,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &50715300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50715296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &81818527
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,9 +399,10 @@ GameObject:
   - component: {fileID: 81818528}
   - component: {fileID: 81818529}
   - component: {fileID: 81818530}
+  - component: {fileID: 81818531}
   m_Layer: 0
   m_Name: CardSlot1
-  m_TagString: Untagged
+  m_TagString: Red Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,6 +488,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &81818531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81818527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &100794880
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,9 +638,10 @@ GameObject:
   - component: {fileID: 246658672}
   - component: {fileID: 246658673}
   - component: {fileID: 246658674}
+  - component: {fileID: 246658675}
   m_Layer: 0
   m_Name: CardSlot4
-  m_TagString: Untagged
+  m_TagString: Red Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,6 +727,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &246658675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246658671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &401849762
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,9 +751,10 @@ GameObject:
   - component: {fileID: 401849763}
   - component: {fileID: 401849764}
   - component: {fileID: 401849765}
+  - component: {fileID: 401849766}
   m_Layer: 0
   m_Name: CardSlot5
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,6 +840,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &401849766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401849762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &631790391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1153,7 @@ GameObject:
   - component: {fileID: 1235902721}
   m_Layer: 0
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,9 +1433,10 @@ GameObject:
   - component: {fileID: 1354427157}
   - component: {fileID: 1354427158}
   - component: {fileID: 1354427159}
+  - component: {fileID: 1354427160}
   m_Layer: 0
   m_Name: CardSlot5
-  m_TagString: Untagged
+  m_TagString: Red Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1465,6 +1522,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &1354427160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354427156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &1458901117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,9 +1546,10 @@ GameObject:
   - component: {fileID: 1458901118}
   - component: {fileID: 1458901119}
   - component: {fileID: 1458901120}
+  - component: {fileID: 1458901121}
   m_Layer: 0
   m_Name: CardSlot1
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1564,6 +1635,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &1458901121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458901117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &1472061615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,9 +1784,10 @@ GameObject:
   - component: {fileID: 1528452234}
   - component: {fileID: 1528452235}
   - component: {fileID: 1528452236}
+  - component: {fileID: 1528452237}
   m_Layer: 0
   m_Name: CardSlot3
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1788,6 +1873,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &1528452237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528452233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &1549904126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,9 +1897,10 @@ GameObject:
   - component: {fileID: 1549904127}
   - component: {fileID: 1549904128}
   - component: {fileID: 1549904129}
+  - component: {fileID: 1549904130}
   m_Layer: 0
   m_Name: CardSlot2
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1887,6 +1986,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &1549904130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549904126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &1616666292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,9 +2639,10 @@ GameObject:
   - component: {fileID: 1994870832}
   - component: {fileID: 1994870833}
   - component: {fileID: 1994870834}
+  - component: {fileID: 1994870835}
   m_Layer: 0
   m_Name: CardSlot4
-  m_TagString: Untagged
+  m_TagString: Blue Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,6 +2728,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &1994870835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994870831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &2011353833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,9 +2752,10 @@ GameObject:
   - component: {fileID: 2011353834}
   - component: {fileID: 2011353835}
   - component: {fileID: 2011353836}
+  - component: {fileID: 2011353837}
   m_Layer: 0
   m_Name: CardSlot3
-  m_TagString: Untagged
+  m_TagString: Red Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2714,6 +2841,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   gm: {fileID: 737084983}
+--- !u!114 &2011353837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011353833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &2021450583
 GameObject:
   m_ObjectHideFlags: 0

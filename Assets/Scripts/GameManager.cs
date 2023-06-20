@@ -470,6 +470,8 @@ public class GameManager : MonoBehaviour
                 break;
             
         }
+        ShowCards();
+        EnergyUpdate();
     }
     public void DrawCard(Player p)
     {
@@ -540,6 +542,7 @@ public class GameManager : MonoBehaviour
             {
                 Card temp = player.playerBoard[i];
                 GameObject spot = blueBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
             }
             else
@@ -551,6 +554,7 @@ public class GameManager : MonoBehaviour
             {
                 Card temp = enemy.playerBoard[i];
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Redartwork;
             }
             else
