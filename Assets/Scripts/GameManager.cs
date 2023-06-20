@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -514,6 +515,7 @@ public class GameManager : MonoBehaviour
                 player.energy += 2;
             else if(turn>3)
                 player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
+            EnergyUpdate();
 
         }
         
@@ -530,7 +532,8 @@ public class GameManager : MonoBehaviour
         enemy = new Player();
         InitializeDeck(enemy);
         InitializeHand(enemy);
-        
+        ShowCards();
+        ShowHand();
         
 
     }
@@ -586,5 +589,15 @@ public class GameManager : MonoBehaviour
                 spot.GetComponent<PlayCard>().card = null;
             }
         }
+    }
+
+    public void EnergyUpdate()
+    {
+        GameObject textObject = GameObject.Find("PlayerEnergyText");
+        TextMeshProUGUI textMeshPro = textObject.GetComponent<TextMeshProUGUI>();
+        textMeshPro.text = player.energy.ToString();
+        textObject = GameObject.Find("EnemyEnergyText");
+        textMeshPro = textObject.GetComponent<TextMeshProUGUI>();
+        textMeshPro.text = enemy.energy.ToString();
     }
 }
