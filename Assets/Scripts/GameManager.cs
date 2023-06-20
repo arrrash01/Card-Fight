@@ -12,21 +12,45 @@ public class GameManager : MonoBehaviour
     public int turn;
     public GameObject blueBoard;
     public GameObject redBoard;
+    public GameObject blueHand;
 
     public bool PlayCard(Card pCard)
     {
+        Debug.Log(pCard.cardName);
         if (player.cardPlayed)
         {
             return false;
         }
-        player.cardPlayed = true; 
-        player.playerHand.Remove(pCard);
-        PlaceCard(pCard);
+
+        if (PlaceCard(pCard))
+        {
+            //player.cardPlayed = true; 
+            player.playerHand.Remove(pCard);
+        }
+
+        ShowCards();
+        ShowHand();
+        return true;
+    }
+
+    public bool EnemyPlayCard(Card pCard)
+    {
+        if (enemy.cardPlayed)
+        {
+            return false;
+        }
+
+        if (EnemyPlaceCard(pCard))
+        {
+            enemy.playerHand.Remove(pCard);
+            //enemy.cardPlayed = true;
+        }
+
         ShowCards();
         return true;
     }
 
-    public void PlaceCard(Card pCard)
+    public bool PlaceCard(Card pCard)
     {
         for (int i = 0;i < player.availableSlots.Length; i++)
         {
@@ -34,9 +58,28 @@ public class GameManager : MonoBehaviour
             {
                 player.availableSlots[i] = false;
                 player.playerBoard.Add(pCard);
-                return;
+                
+                return true;
             }
         }
+
+        return false;
+    }
+
+    public bool EnemyPlaceCard(Card pCard)
+    {
+        for (int i = 0;i < enemy.availableSlots.Length; i++)
+        {
+            if (enemy.availableSlots[i])
+            {
+                enemy.availableSlots[i] = false;
+                enemy.playerBoard.Add(pCard);
+                
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void Attack(Card attacker,Card enemyCard = null)
@@ -432,8 +475,11 @@ public class GameManager : MonoBehaviour
         { 
             Card randCard = p.playerDeck[Random.Range(0, p.playerDeck.Count)];
             p.playerDeck.Remove(randCard); 
-            p.playerHand.Add(randCard); 
+            p.playerHand.Add(randCard);
+
         }
+
+        ShowHand();
     }
 
     public void InitializeDeck(Player p)
@@ -453,6 +499,24 @@ public class GameManager : MonoBehaviour
     } 
     private void Update()
     {
+        if (turn % 2 == 0)
+        {
+            if (turn == 2)
+                enemy.energy += 1; 
+            else if (turn == 4)
+                enemy.energy += 3;
+            else
+                enemy.energy = (enemy.energy + 4 > 10 ? 10:enemy.energy+4);
+            DrawCard(enemy);
+            EnemyPlayCard(enemy.playerHand[0]);
+            turn++;
+            if (turn == 3)
+                player.energy += 2;
+            else if(turn>3)
+                player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
+
+        }
+        
         
     }
 
@@ -466,12 +530,8 @@ public class GameManager : MonoBehaviour
         enemy = new Player();
         InitializeDeck(enemy);
         InitializeHand(enemy);
-
-        PlayCard(player.playerHand[1]);
-        player.cardPlayed = false;
-        PlayCard(player.playerHand[1]);
-        Debug.Log(player.playerBoard.Count);
-        Debug.Log(player.availableSlots[0]);
+        
+        
 
     }
 
@@ -503,6 +563,28 @@ public class GameManager : MonoBehaviour
                 spot.GetComponent<SpriteRenderer>().sprite = null;
             }
                 
+        }
+    }
+
+    private void ShowHand()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+
+            if (i < player.playerHand.Count)
+            {
+                Card temp = player.playerHand[i];
+                GameObject spot = blueHand.transform.GetChild(i).gameObject;
+                spot.GetComponent<PlayCard>().card = temp;
+                spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
+                
+            }
+            else
+            {
+                GameObject spot = blueHand.transform.GetChild(i).gameObject;
+                spot.GetComponent<SpriteRenderer>().sprite = null;
+                spot.GetComponent<PlayCard>().card = null;
+            }
         }
     }
 }
