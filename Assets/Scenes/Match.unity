@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 50715298}
   - component: {fileID: 50715299}
   - component: {fileID: 50715300}
+  - component: {fileID: 50715301}
   m_Layer: 0
   m_Name: CardSlot2
   m_TagString: Red Player
@@ -387,7 +388,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &50715301
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50715296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &81818527
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +427,7 @@ GameObject:
   - component: {fileID: 81818529}
   - component: {fileID: 81818530}
   - component: {fileID: 81818531}
+  - component: {fileID: 81818532}
   m_Layer: 0
   m_Name: CardSlot1
   m_TagString: Red Player
@@ -500,7 +528,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &81818532
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81818527}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &100794880
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +693,7 @@ GameObject:
   - component: {fileID: 246658673}
   - component: {fileID: 246658674}
   - component: {fileID: 246658675}
+  - component: {fileID: 246658676}
   m_Layer: 0
   m_Name: CardSlot4
   m_TagString: Red Player
@@ -739,7 +794,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &246658676
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246658671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &401849762
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +833,7 @@ GameObject:
   - component: {fileID: 401849764}
   - component: {fileID: 401849765}
   - component: {fileID: 401849766}
+  - component: {fileID: 401849767}
   m_Layer: 0
   m_Name: CardSlot5
   m_TagString: Blue Player
@@ -852,7 +934,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &401849767
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401849762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &631790391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1542,7 @@ GameObject:
   - component: {fileID: 1354427158}
   - component: {fileID: 1354427159}
   - component: {fileID: 1354427160}
+  - component: {fileID: 1354427161}
   m_Layer: 0
   m_Name: CardSlot5
   m_TagString: Red Player
@@ -1534,7 +1643,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &1354427161
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354427156}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1458901117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1682,7 @@ GameObject:
   - component: {fileID: 1458901119}
   - component: {fileID: 1458901120}
   - component: {fileID: 1458901121}
+  - component: {fileID: 1458901122}
   m_Layer: 0
   m_Name: CardSlot1
   m_TagString: Blue Player
@@ -1647,7 +1783,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &1458901122
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458901117}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1472061615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1947,7 @@ GameObject:
   - component: {fileID: 1528452235}
   - component: {fileID: 1528452236}
   - component: {fileID: 1528452237}
+  - component: {fileID: 1528452238}
   m_Layer: 0
   m_Name: CardSlot3
   m_TagString: Blue Player
@@ -1885,7 +2048,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &1528452238
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528452233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1549904126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +2087,7 @@ GameObject:
   - component: {fileID: 1549904128}
   - component: {fileID: 1549904129}
   - component: {fileID: 1549904130}
+  - component: {fileID: 1549904131}
   m_Layer: 0
   m_Name: CardSlot2
   m_TagString: Blue Player
@@ -1998,7 +2188,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &1549904131
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549904126}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1616666292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2856,7 @@ GameObject:
   - component: {fileID: 1994870833}
   - component: {fileID: 1994870834}
   - component: {fileID: 1994870835}
+  - component: {fileID: 1994870836}
   m_Layer: 0
   m_Name: CardSlot4
   m_TagString: Blue Player
@@ -2740,7 +2957,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &1994870836
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994870831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &2011353833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,6 +2996,7 @@ GameObject:
   - component: {fileID: 2011353835}
   - component: {fileID: 2011353836}
   - component: {fileID: 2011353837}
+  - component: {fileID: 2011353838}
   m_Layer: 0
   m_Name: CardSlot3
   m_TagString: Red Player
@@ -2853,7 +3097,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6eea14869de98b4eaebbc07c44d0b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 737084983}
+--- !u!61 &2011353838
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011353833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &2021450583
 GameObject:
   m_ObjectHideFlags: 0
