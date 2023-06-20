@@ -89,9 +89,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        bool trenchExists=false;
-        if (enemy.FindByNameBoard("سنگر") != null)
-            trenchExists = true;
+        var trenchExists=enemy.FindByNameBoard("سنگر") != null;
         var index=player.playerBoard.IndexOf(attacker);
         switch (attacker.type)
         {
@@ -416,6 +414,9 @@ public class GameManager : MonoBehaviour
                 }
                 player.energy -= attacker.energyCost;
                 break;
+            case CardType.Diver:
+                Debug.Log(("Diver attack"));
+                break;
             case CardType.ElectricTower:
                 Debug.Log("ElectricTower attack");
                 break;
@@ -477,9 +478,7 @@ public class GameManager : MonoBehaviour
             Card randCard = p.playerDeck[Random.Range(0, p.playerDeck.Count)];
             p.playerDeck.Remove(randCard); 
             p.playerHand.Add(randCard);
-
         }
-
         ShowHand();
     }
 
@@ -516,10 +515,7 @@ public class GameManager : MonoBehaviour
             else if(turn>3)
                 player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
             EnergyUpdate();
-
         }
-        
-        
     }
 
     private void Start()
@@ -534,15 +530,12 @@ public class GameManager : MonoBehaviour
         InitializeHand(enemy);
         ShowCards();
         ShowHand();
-        
-
     }
 
     private void ShowCards()
     {
         for (int i = 0; i < 5; i++)
         {
-            
             if (i < player.playerBoard.Count)
             {
                 Card temp = player.playerBoard[i];
@@ -565,7 +558,6 @@ public class GameManager : MonoBehaviour
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
             }
-                
         }
     }
 
@@ -573,7 +565,6 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-
             if (i < player.playerHand.Count)
             {
                 Card temp = player.playerHand[i];
