@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
     public Player enemy;
-    public List<Card> AllCards = new List<Card>();
+    public List<Card> allCards = new List<Card>();
     public int turn;
+    public GameObject blueBoard;
+    public GameObject redBoard;
 
     public bool PlayCard(Card pCard)
     {
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
         player.cardPlayed = true; 
         player.playerHand.Remove(pCard);
         PlaceCard(pCard);
+        ShowCards();
         return true;
     }
 
@@ -429,7 +433,6 @@ public class GameManager : MonoBehaviour
             Card randCard = p.playerDeck[Random.Range(0, p.playerDeck.Count)];
             p.playerDeck.Remove(randCard); 
             p.playerHand.Add(randCard); 
-            return;
         }
     }
 
@@ -437,8 +440,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            int k = Random.Range(0, AllCards.Count);
-            p.playerDeck.Add(AllCards[k]);
+            int k = Random.Range(0, allCards.Count);
+            p.playerDeck.Add(allCards[k]);
         }
     }
     public void InitializeHand(Player p)
@@ -469,6 +472,37 @@ public class GameManager : MonoBehaviour
         PlayCard(player.playerHand[1]);
         Debug.Log(player.playerBoard.Count);
         Debug.Log(player.availableSlots[0]);
-        
+
+    }
+
+    private void ShowCards()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            
+            if (i < player.playerBoard.Count)
+            {
+                Card temp = player.playerBoard[i];
+                GameObject spot = blueBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
+            }
+            else
+            {
+                GameObject spot = blueBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            if (i < enemy.playerBoard.Count)
+            {
+                Card temp = enemy.playerBoard[i];
+                GameObject spot = redBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<SpriteRenderer>().sprite = temp.Redartwork;
+            }
+            else
+            {
+                GameObject spot = redBoard.transform.GetChild(i).gameObject;
+                spot.GetComponent<SpriteRenderer>().sprite = null;
+            }
+                
+        }
     }
 }
