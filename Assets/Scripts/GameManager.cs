@@ -532,6 +532,7 @@ public class GameManager : MonoBehaviour
         InitializeHand(enemy);
         ShowCards();
         ShowHand();
+        EnergyUpdate();
     }
 
     private void ShowCards()
