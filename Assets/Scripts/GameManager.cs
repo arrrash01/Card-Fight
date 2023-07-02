@@ -89,19 +89,20 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        var trenchExists=enemy.FindByNameBoard("سنگر") != null;
+        Card trenchExists=enemy.FindByNameBoard("Trench");
         var index=player.playerBoard.IndexOf(attacker);
         switch (attacker.type)
         {
             case CardType.Gunman: 
-                Debug.Log("gunman attack");
+                Debug.Log("gunman attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -115,14 +116,15 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Tank: 
-                Debug.Log("Tank attack");
+                Debug.Log("Tank attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -137,12 +139,13 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Helli: 
-                Debug.Log("Hellicopter attack");
+                Debug.Log("Hellicopter attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
                     }
                     else
                     {
@@ -155,8 +158,8 @@ public class GameManager : MonoBehaviour
 
                     if (index > 0)
                     {
-                        if(trenchExists)
-                            enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
+                        if(trenchExists!=null)
+                            trenchExists.hp -= attacker.damage;
                         else
                         {
                             enemy.playerBoard[index-1].hp -= attacker.damage;
@@ -169,9 +172,11 @@ public class GameManager : MonoBehaviour
                     }
                     if (enemy.playerBoard.Count > index+1)
                     {
-                        if (trenchExists)
+                        if (trenchExists!=null)
                         {
-                            enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
+                            trenchExists.hp -= attacker.damage;
+                            Debug.Log("Trench remaining hp: " + trenchExists.hp);
+
                         }
                         else
                         {
@@ -182,18 +187,19 @@ public class GameManager : MonoBehaviour
                             }    
                         }
                     }
-                    if (trenchExists && enemy.FindByNameBoard("سنگر").hp <= 0)
-                        enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                    if (trenchExists!=null && trenchExists.hp <= 0)
+                        enemy.playerBoard.Remove(trenchExists);
                     player.energy -= attacker.energyCost;
                 }
                 break;
             case CardType.MachineGun: 
-                Debug.Log("Machinegun attack");
-                if (trenchExists)
+                Debug.Log("Machinegun attack: attack:"+attacker.damage);
+                if (trenchExists!=null)
                 {
-                    enemy.FindByNameBoard("سنگر").hp -= attacker.damage*enemy.playerBoard.Count;
-                    if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                        enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                    trenchExists.hp -= attacker.damage*enemy.playerBoard.Count;
+                    Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                    if (trenchExists.hp <= 0)
+                        enemy.playerBoard.Remove(trenchExists);
                 }
                 else
                 {
@@ -209,14 +215,15 @@ public class GameManager : MonoBehaviour
                 player.energy -= attacker.energyCost;
                 break;
             case CardType.Jet: 
-                Debug.Log("Jet attack");
+                Debug.Log("Jet attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -230,14 +237,15 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Trench:
-                Debug.Log("trench attack");
+                Debug.Log("trench attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -251,14 +259,15 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Doctor: 
-                Debug.Log("Doctor attack");
+                Debug.Log("Doctor attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -277,15 +286,16 @@ public class GameManager : MonoBehaviour
                 
                 break;
             case CardType.Engineer: 
-                Debug.Log("Engineer attack");
+                Debug.Log("Engineer attack: attack:"+attacker.damage);
                 
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -303,18 +313,19 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Grenade: 
-                Debug.Log("Grenade attack");
+                Debug.Log("Grenade attack: attack:"+attacker.damage);
                 enemy.FindByNameBoard(enemyCard.name).hp -= attacker.damage;
                 player.energy -= attacker.energyCost;
                 player.playerBoard.Remove(attacker);
                 break;
             case CardType.DoubleTank: 
-                Debug.Log("Double barrel tank attack"); 
+                Debug.Log("Double barrel tank attack: attack:"+attacker.damage); 
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
+                        trenchExists.hp -= attacker.damage;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
                     }
                     else
                     {
@@ -326,9 +337,10 @@ public class GameManager : MonoBehaviour
                     }
                     if (enemy.playerBoard.Count > index+1)
                     {
-                        if (trenchExists)
+                        if (trenchExists!=null)
                         {
-                            enemy.FindByNameBoard("سنگر").hp -= attacker.damage;
+                            trenchExists.hp -= attacker.damage;
+                            Debug.Log("Trench remaining hp: " + trenchExists.hp);
                         }
                         else
                         {
@@ -339,25 +351,26 @@ public class GameManager : MonoBehaviour
                             }    
                         }
                     }
-                    if (trenchExists && enemy.FindByNameBoard("سنگر").hp <= 0)
-                        enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                    if (trenchExists!=null && trenchExists.hp <= 0)
+                        enemy.playerBoard.Remove(trenchExists);
                     player.energy -= attacker.energyCost;
                 }
                 break;
             case CardType.RocketLauncher: 
-                Debug.Log("Rocket Launcher attack"); 
+                Debug.Log("Rocket Launcher attack: attack:"+attacker.damage); 
                 enemy.FindByNameBoard(enemyCard.name).hp -= attacker.damage;
                 player.energy -= attacker.energyCost;
                 break;
             case CardType.RPG: 
-                Debug.Log("RPG attack");
+                Debug.Log("RPG attack: attack:"+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage*2;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage*2;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -376,11 +389,12 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Sniper attack");
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage*2;
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage*2;
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     else
                     {
@@ -400,11 +414,12 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Tesla attack");
                 for (int i = 0; i < enemy.playerBoard.Count; i++)
                 {
-                    if (trenchExists)
+                    if (trenchExists!=null)
                     {
-                        enemy.FindByNameBoard("سنگر").hp -= attacker.damage/(int)(Math.Pow(2,Math.Abs(index-i)));
-                        if (enemy.FindByNameBoard("سنگر").hp <= 0)
-                            enemy.playerBoard.Remove(enemy.FindByNameBoard("سنگر"));
+                        trenchExists.hp -= attacker.damage/(int)(Math.Pow(2,Math.Abs(index-i)));
+                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                        if (trenchExists.hp <= 0)
+                            enemy.playerBoard.Remove(trenchExists);
                     }
                     enemy.playerBoard[i].hp -= attacker.damage/(int)(Math.Pow(2,Math.Abs(index-i)));
                     if (enemy.playerBoard[i].hp <= 0)
@@ -511,6 +526,7 @@ public class GameManager : MonoBehaviour
                 enemy.energy = (enemy.energy + 4 > 10 ? 10:enemy.energy+4);
             DrawCard(enemy);
             EnemyPlayCard(enemy.playerHand[0]);
+            DrawCard(player);
             turn++;
             if (turn == 3)
                 player.energy += 2;
@@ -545,11 +561,13 @@ public class GameManager : MonoBehaviour
                 GameObject spot = blueBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
+                player.availableSlots[i] = false;
             }
             else
             {
                 GameObject spot = blueBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
+                player.availableSlots[i] = true;
             }
             if (i < enemy.playerBoard.Count)
             {
@@ -557,11 +575,13 @@ public class GameManager : MonoBehaviour
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Redartwork;
+                enemy.availableSlots[i] = false;
             }
             else
             {
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
+                enemy.availableSlots[i] = true;
             }
         }
     }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1747a1955ce34874fa92a809a550068c, type: 3}
   m_Name: Trench
   m_EditorClassIdentifier: 
-  cardName: "\u0633\u0646\u06AF\u0631"
+  cardName: Trench
   energyCost: 4
+  maxhp: 0
   hp: 10
   damage: 1
   type: 5
@@ -22,3 +23,4 @@ MonoBehaviour:
   description: 
   isHuman: 0
   isFacility: 1
+  level: 0

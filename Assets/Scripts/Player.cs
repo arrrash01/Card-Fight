@@ -28,7 +28,7 @@ public class Player
     {
         for (int i = 0; i < playerBoard.Count; i++)
         {
-            if (playerBoard[i].name.Equals(name))
+            if (playerBoard[i].cardName.Equals(name))
                 return playerBoard[i];
         }
         
