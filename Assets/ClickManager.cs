@@ -14,6 +14,7 @@ public class ClickManager : MonoBehaviour
             {
                 Debug.Log("attacking");
                 gm.Attack(lastClickedObject.GetComponent<CardAttack>().card,clickedObject.GetComponent<CardAttack>().card);
+                return;
             }
         }
         lastClickedObject = clickedObject;

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Trench
   energyCost: 4
   maxhp: 0
-  hp: 10
+  hp: 2
   damage: 1
   type: 5
   Blueartwork: {fileID: 21300000, guid: 69fe09b4312f4964ebeaad944c7b1f75, type: 3}

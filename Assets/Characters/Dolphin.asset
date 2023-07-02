@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "\u062F\u0644\u0641\u06CC\u0646"
   energyCost: 2
+  maxhp: 0
   hp: 0
-  damage: 0
+  damage: 1
   type: 23
   Blueartwork: {fileID: 0}
   Redartwork: {fileID: 0}
   description: 
   isHuman: 0
   isFacility: 0
+  level: 0

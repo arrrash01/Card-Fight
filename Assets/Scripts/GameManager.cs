@@ -22,13 +22,11 @@ public class GameManager : MonoBehaviour
         {
             return false;
         }
-
         if (PlaceCard(pCard))
         {
             //player.cardPlayed = true; 
             player.playerHand.Remove(pCard);
         }
-
         ShowCards();
         ShowHand();
         return true;
@@ -40,13 +38,11 @@ public class GameManager : MonoBehaviour
         {
             return false;
         }
-
         if (EnemyPlaceCard(pCard))
         {
             enemy.playerHand.Remove(pCard);
             //enemy.cardPlayed = true;
         }
-
         ShowCards();
         return true;
     }
@@ -63,7 +59,6 @@ public class GameManager : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
@@ -79,11 +74,10 @@ public class GameManager : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
-    public void Attack(Card attacker,Card enemyCard = null)
+    public void Attack(Card attacker,Card enemyCard)
     {
         if (player.energy < attacker.energyCost)
         {
@@ -314,7 +308,7 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.Grenade: 
                 Debug.Log("Grenade attack: attack:"+attacker.damage);
-                enemy.FindByNameBoard(enemyCard.name).hp -= attacker.damage;
+                enemy.FindByNameBoard(enemyCard.cardName).hp -= attacker.damage;
                 player.energy -= attacker.energyCost;
                 player.playerBoard.Remove(attacker);
                 break;
@@ -358,7 +352,7 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.RocketLauncher: 
                 Debug.Log("Rocket Launcher attack: attack:"+attacker.damage); 
-                enemy.FindByNameBoard(enemyCard.name).hp -= attacker.damage;
+                enemy.FindByNameBoard(enemyCard.cardName).hp -= attacker.damage;
                 player.energy -= attacker.energyCost;
                 break;
             case CardType.RPG: 
@@ -386,7 +380,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.Sniper: 
-                Debug.Log("Sniper attack");
+                Debug.Log("Sniper attack: attack: "+attacker.damage);
                 if (enemy.playerBoard.Count > index)
                 {
                     if (trenchExists!=null)

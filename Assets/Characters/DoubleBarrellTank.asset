@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "\u062A\u0627\u0646\u06A9 \u062F\u0648 \u0644\u0648\u0644"
   energyCost: 3
-  hp: 5
+  maxhp: 0
+  hp: 2
   damage: 5
   type: 9
   Blueartwork: {fileID: 21300000, guid: 4d001c7beed74234f9f6b8b485fe3d4d, type: 3}
@@ -22,3 +23,4 @@ MonoBehaviour:
   description: 
   isHuman: 0
   isFacility: 1
+  level: 0
