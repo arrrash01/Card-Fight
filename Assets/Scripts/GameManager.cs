@@ -498,7 +498,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             int k = Random.Range(0, allCards.Count);
-            p.playerDeck.Add(allCards[k]);
+            p.playerDeck.Add(Instantiate(allCards[k]));
         }
     }
     public void InitializeHand(Player p)
@@ -519,7 +519,8 @@ public class GameManager : MonoBehaviour
             else
                 enemy.energy = (enemy.energy + 4 > 10 ? 10:enemy.energy+4);
             DrawCard(enemy);
-            EnemyPlayCard(enemy.playerHand[0]);
+            if(enemy.playerHand.Count>0)
+                EnemyPlayCard(enemy.playerHand[0]);
             DrawCard(player);
             turn++;
             if (turn == 3)
