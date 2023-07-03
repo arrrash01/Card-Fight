@@ -8,6 +8,8 @@ public class EndTurn : MonoBehaviour
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0))
         {
+            if (gm.endGame)
+                return;
             if (gm.turn%2==1)
             {
                 gm.turn++;

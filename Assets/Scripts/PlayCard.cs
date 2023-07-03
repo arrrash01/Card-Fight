@@ -12,6 +12,8 @@ public class PlayCard : MonoBehaviour
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0))
         {
+            if (gm.endGame)
+                return;
             if (GetComponent<SpriteRenderer>().sprite!=null)
             {
                 Debug.Log("clicked");
@@ -23,6 +25,8 @@ public class PlayCard : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            if (gm.endGame)
+                return;
             if (GetComponent<SpriteRenderer>().sprite != null)
             {
                 Debug.Log("touched");

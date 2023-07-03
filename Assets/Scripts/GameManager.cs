@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject redBoard;
     public GameObject blueHand;
 
+    public bool endGame = false;
+    private string endText;
     public bool PlayCard(Card pCard)
     {
         Debug.Log(pCard.cardName);
@@ -76,10 +78,30 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-
+    public void FrontAttack(Card attacker,int index,Card trenchExists){
+        if (enemy.playerBoard.Count > index)
+        {
+            if (trenchExists!=null)
+            {
+                trenchExists.hp -= attacker.damage;
+                Debug.Log("Trench remaining hp: " + trenchExists.hp);
+                if (trenchExists.hp <= 0)
+                    enemy.playerBoard.Remove(trenchExists);
+            }
+            else
+            {
+                enemy.playerBoard[index].hp -= attacker.damage;
+                if (enemy.playerBoard[index].hp <= 0)
+                {
+                    enemy.playerBoard.Remove(enemy.playerBoard[index]);
+                }
+            }
+            player.energy -= attacker.energyCost;
+        }
+    }
     public void Attack(Card attacker,Card enemyCard)
     {
-        if (player.energy < attacker.energyCost)
+        if (player.energy < attacker.energyCost || endGame)
         {
             return;
         }
@@ -89,48 +111,11 @@ public class GameManager : MonoBehaviour
         {
             case CardType.Gunman: 
                 Debug.Log("gunman attack: attack:"+attacker.damage);
-                if (enemy.playerBoard.Count > index)
-                {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-                    player.energy -= attacker.energyCost;
-                }
+                FrontAttack(attacker,index,trenchExists);
                 break;
             case CardType.Tank: 
                 Debug.Log("Tank attack: attack:"+attacker.damage);
-                if (enemy.playerBoard.Count > index)
-                {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-
-                    player.energy -= attacker.energyCost;
-                }
+                FrontAttack(attacker,index,trenchExists);
                 break;
             case CardType.Helli: 
                 Debug.Log("Hellicopter attack: attack:"+attacker.damage);
@@ -210,96 +195,29 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.Jet: 
                 Debug.Log("Jet attack: attack:"+attacker.damage);
-                if (enemy.playerBoard.Count > index)
-                {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-                    player.energy -= attacker.energyCost;
-                }
+                FrontAttack(attacker,index,trenchExists);
                 break;
             case CardType.Trench:
                 Debug.Log("trench attack: attack:"+attacker.damage);
-                if (enemy.playerBoard.Count > index)
-                {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-                    player.energy -= attacker.energyCost;
-                }
+                FrontAttack(attacker,index,trenchExists);
                 break;
             case CardType.Doctor: 
                 Debug.Log("Doctor attack: attack:"+attacker.damage);
+                FrontAttack(attacker,index,trenchExists);
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-                    player.energy -= attacker.energyCost;
                     for (int i = 0; i < player.playerBoard.Count; i++)
                     {
                         player.playerBoard[i].hp += attacker.damage / 2;
                     }
                 }
-                
                 break;
             case CardType.Engineer: 
                 Debug.Log("Engineer attack: attack:"+attacker.damage);
                 
                 if (enemy.playerBoard.Count > index)
                 {
-                    if (trenchExists!=null)
-                    {
-                        trenchExists.hp -= attacker.damage;
-                        Debug.Log("Trench remaining hp: " + trenchExists.hp);
-                        if (trenchExists.hp <= 0)
-                            enemy.playerBoard.Remove(trenchExists);
-                    }
-                    else
-                    {
-                        enemy.playerBoard[index].hp -= attacker.damage;
-                        if (enemy.playerBoard[index].hp <= 0)
-                        {
-                            enemy.playerBoard.Remove(enemy.playerBoard[index]);
-                        }
-                    }
-                    player.energy -= attacker.energyCost;
+                    FrontAttack(attacker,index,trenchExists);
                     for (int i = 0; i < player.playerBoard.Count; i++)
                     {
                         player.playerBoard[i].damage += attacker.damage / 4;
@@ -353,6 +271,10 @@ public class GameManager : MonoBehaviour
             case CardType.RocketLauncher: 
                 Debug.Log("Rocket Launcher attack: attack:"+attacker.damage); 
                 enemy.FindByNameBoard(enemyCard.cardName).hp -= attacker.damage;
+                if (enemy.FindByNameBoard(enemyCard.cardName).hp <= 0)
+                {
+                    enemy.playerBoard.Remove(enemy.FindByNameBoard(enemyCard.cardName));
+                }    
                 player.energy -= attacker.energyCost;
                 break;
             case CardType.RPG: 
@@ -510,7 +432,7 @@ public class GameManager : MonoBehaviour
     } 
     private void Update()
     {
-        if (turn % 2 == 0)
+        if (turn % 2 == 0 && endGame == false) 
         {
             if (turn == 2)
                 enemy.energy += 1; 
@@ -529,6 +451,18 @@ public class GameManager : MonoBehaviour
                 player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
             EnergyUpdate();
         }
+
+        if (player.playerHand.Count == 0 && player.playerDeck.Count == 0 && player.playerBoard.Count == 0)
+        {
+            endGame = true;
+            endText = "You win!";
+        }
+        if (enemy.playerHand.Count == 0 && enemy.playerDeck.Count == 0 && enemy.playerBoard.Count == 0)
+        {
+            endGame = true;
+            endText = "You lose!";
+        }
+        
     }
 
     private void Start()
