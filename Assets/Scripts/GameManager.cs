@@ -133,7 +133,6 @@ public class GameManager : MonoBehaviour
                             enemy.playerBoard.Remove(enemy.playerBoard[index]);
                         }
                     }
-
                     if (index > 0)
                     {
                         if(trenchExists!=null)
@@ -146,7 +145,6 @@ public class GameManager : MonoBehaviour
                                 enemy.playerBoard.Remove(enemy.playerBoard[index-1]);
                             }    
                         }
-                        
                     }
                     if (enemy.playerBoard.Count > index+1)
                     {
@@ -213,7 +211,6 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.Engineer: 
                 Debug.Log("Engineer attack: attack:"+attacker.damage);
-                
                 if (enemy.playerBoard.Count > index)
                 {
                     FrontAttack(attacker,index,trenchExists);
@@ -327,7 +324,6 @@ public class GameManager : MonoBehaviour
                     }
                     player.energy -= attacker.energyCost;
                 }
-
                 break;
             case CardType.Tesla: 
                 Debug.Log("Tesla attack");
@@ -354,6 +350,7 @@ public class GameManager : MonoBehaviour
                 enemy.FindByNameBoard(enemyCard.cardName).damageToTake = attacker.damage;
                 player.energy -= attacker.energyCost;
                 break;
+            
             case CardType.ElectricTower:
                 Debug.Log("ElectricTower attack");
                 break;
@@ -405,7 +402,6 @@ public class GameManager : MonoBehaviour
             case CardType.Drone:
                 Debug.Log("Drone attack");
                 break;
-            
         }
         ShowCards();
         EnergyUpdate();
@@ -449,8 +445,7 @@ public class GameManager : MonoBehaviour
             DrawCard(enemy);
             if(enemy.playerHand.Count>0)
                 EnemyPlayCard(enemy.playerHand[0]);
-            
-            
+
             turn++;
             DrawCard(player);
             for (int i = 0; i < enemy.playerBoard.Count; i++)
@@ -475,7 +470,6 @@ public class GameManager : MonoBehaviour
                 player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
             EnergyUpdate();
         }
-
         if (player.playerHand.Count == 0 && player.playerDeck.Count == 0 && player.playerBoard.Count == 0)
         {
             endGame = true;
@@ -488,7 +482,6 @@ public class GameManager : MonoBehaviour
         }
         
     }
-
     private void Start()
     {
         player = new Player();
@@ -503,7 +496,6 @@ public class GameManager : MonoBehaviour
         ShowHand();
         EnergyUpdate();
     }
-
     private void ShowCards()
     {
         for (int i = 0; i < 5; i++)
@@ -514,12 +506,17 @@ public class GameManager : MonoBehaviour
                 GameObject spot = blueBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
+                Vector3 v = spot.GetComponent<Renderer>().bounds.size;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(v.x/spot.transform.localScale.x,v.y/spot.transform.localScale.y);
                 player.availableSlots[i] = false;
             }
             else
             {
                 GameObject spot = blueBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(0,0);
                 player.availableSlots[i] = true;
             }
             if (i < enemy.playerBoard.Count)
@@ -528,17 +525,21 @@ public class GameManager : MonoBehaviour
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<CardAttack>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Redartwork;
+                Vector3 v = spot.GetComponent<Renderer>().bounds.size;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(v.x/spot.transform.localScale.x,v.y/spot.transform.localScale.y);
                 enemy.availableSlots[i] = false;
             }
             else
             {
                 GameObject spot = redBoard.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(0,0);
                 enemy.availableSlots[i] = true;
             }
         }
     }
-
     private void ShowHand()
     {
         for (int i = 0; i < 5; i++)
@@ -549,17 +550,20 @@ public class GameManager : MonoBehaviour
                 GameObject spot = blueHand.transform.GetChild(i).gameObject;
                 spot.GetComponent<PlayCard>().card = temp;
                 spot.GetComponent<SpriteRenderer>().sprite = temp.Blueartwork;
-                
+                Vector3 v = spot.GetComponent<Renderer>().bounds.size;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(v.x,v.y);
             }
             else
             {
                 GameObject spot = blueHand.transform.GetChild(i).gameObject;
                 spot.GetComponent<SpriteRenderer>().sprite = null;
                 spot.GetComponent<PlayCard>().card = null;
+                BoxCollider2D b = spot.GetComponent<BoxCollider2D>();
+                b.size = new Vector2(0,0);
             }
         }
     }
-
     public void EnergyUpdate()
     {
         GameObject textObject = GameObject.Find("PlayerEnergyText");
