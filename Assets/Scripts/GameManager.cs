@@ -226,6 +226,10 @@ public class GameManager : MonoBehaviour
             case CardType.Grenade: 
                 Debug.Log("Grenade attack: attack:"+attacker.damage);
                 enemy.FindByNameBoard(enemyCard.cardName).hp -= attacker.damage;
+                if (enemy.FindByNameBoard(enemyCard.cardName).hp <= 0)
+                {
+                    enemy.playerBoard.Remove(enemy.FindByNameBoard(enemyCard.cardName));
+                }
                 player.energy -= attacker.energyCost;
                 player.playerBoard.Remove(attacker);
                 break;
@@ -346,6 +350,9 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.Diver:
                 Debug.Log(("Diver attack"));
+                enemy.FindByNameBoard(enemyCard.cardName).turnBombed = turn;
+                enemy.FindByNameBoard(enemyCard.cardName).damageToTake = attacker.damage;
+                player.energy -= attacker.energyCost;
                 break;
             case CardType.ElectricTower:
                 Debug.Log("ElectricTower attack");
@@ -442,8 +449,26 @@ public class GameManager : MonoBehaviour
             DrawCard(enemy);
             if(enemy.playerHand.Count>0)
                 EnemyPlayCard(enemy.playerHand[0]);
-            DrawCard(player);
+            
+            
             turn++;
+            DrawCard(player);
+            for (int i = 0; i < enemy.playerBoard.Count; i++)
+            {
+                if (turn - enemy.playerBoard[i].turnBombed == 2)
+                {
+                    enemy.playerBoard[i].hp -= enemy.playerBoard[i].damageToTake;
+                    if(enemy.playerBoard[i].hp<=0)
+                        enemy.playerBoard.Remove(enemy.playerBoard[i]);
+                    else
+                    {
+                        enemy.playerBoard[i].damageToTake = 0;
+                        enemy.playerBoard[i].turnBombed = -2;
+                    }
+                    ShowCards();
+                    break;
+                }
+            }
             if (turn == 3)
                 player.energy += 2;
             else if(turn>3)

@@ -17,6 +17,8 @@ public class Card : ScriptableObject
     public bool isHuman;
     public bool isFacility;
     public int level;
+    public int turnBombed=-2;
+    public int damageToTake;
     public void LevelUp(LevelUpProgression levelUpProgression)
     {
         // Increase the character's level
