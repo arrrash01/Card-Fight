@@ -14,9 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject blueBoard;
     public GameObject redBoard;
     public GameObject blueHand;
-
     public bool endGame = false;
-    private string endText;
+    public uiManager UIManager;
     public bool PlayCard(Card pCard)
     {
         Debug.Log(pCard.cardName);
@@ -455,12 +454,12 @@ public class GameManager : MonoBehaviour
         if (player.playerHand.Count == 0 && player.playerDeck.Count == 0 && player.playerBoard.Count == 0)
         {
             endGame = true;
-            endText = "You win!";
+            UIManager.ShowGameEndPanel();
         }
         if (enemy.playerHand.Count == 0 && enemy.playerDeck.Count == 0 && enemy.playerBoard.Count == 0)
         {
             endGame = true;
-            endText = "You lose!";
+            UIManager.ShowGameEndPanel();
         }
         
     }
