@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject blueHand;
     public bool endGame = false;
     public uiManager UIManager;
+    private List<Card> bombedCards=new List<Card>();
     public bool PlayCard(Card pCard)
     {
         Debug.Log(pCard.cardName);
@@ -31,7 +32,6 @@ public class GameManager : MonoBehaviour
         ShowHand();
         return true;
     }
-
     public bool EnemyPlayCard(Card pCard)
     {
         if (enemy.cardPlayed)
@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
         ShowCards();
         return true;
     }
-
     public bool PlaceCard(Card pCard)
     {
         for (int i = 0;i < player.availableSlots.Length; i++)
@@ -55,13 +54,11 @@ public class GameManager : MonoBehaviour
             {
                 player.availableSlots[i] = false;
                 player.playerBoard.Add(pCard);
-                
                 return true;
             }
         }
         return false;
     }
-
     public bool EnemyPlaceCard(Card pCard)
     {
         for (int i = 0;i < enemy.availableSlots.Length; i++)
@@ -347,6 +344,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log(("Diver attack"));
                 enemy.FindByNameBoard(enemyCard.cardName).turnBombed = turn;
                 enemy.FindByNameBoard(enemyCard.cardName).damageToTake = attacker.damage;
+                bombedCards.Add(enemyCard);
                 player.energy -= attacker.energyCost;
                 break;
             
@@ -415,7 +413,6 @@ public class GameManager : MonoBehaviour
         }
         ShowHand();
     }
-
     public void InitializeDeck(Player p)
     {
         for (int i = 0; i < 10; i++)
@@ -447,39 +444,38 @@ public class GameManager : MonoBehaviour
 
             turn++;
             DrawCard(player);
-            for (int i = 0; i < enemy.playerBoard.Count; i++)
+            int i = 0;
+            while(bombedCards.Count>0 && i<bombedCards.Count)
             {
                 if (turn - enemy.playerBoard[i].turnBombed == 2)
                 {
-                    enemy.playerBoard[i].hp -= enemy.playerBoard[i].damageToTake;
-                    if(enemy.playerBoard[i].hp<=0)
-                        enemy.playerBoard.Remove(enemy.playerBoard[i]);
+                    bombedCards[i].hp -= bombedCards[i].damageToTake;
+                    if(bombedCards[i].hp<=0)
+                        enemy.playerBoard.Remove(bombedCards[i]);
                     else
                     {
-                        enemy.playerBoard[i].damageToTake = 0;
-                        enemy.playerBoard[i].turnBombed = -2;
+                        bombedCards[i].damageToTake = 0;
+                        bombedCards[i].turnBombed = -2;
                     }
-                    ShowCards();
-                    break;
+                    bombedCards.Remove(bombedCards[i]);
+                }
+                else
+                {
+                    i++;
                 }
             }
+            ShowCards();
             if (turn == 3)
                 player.energy += 2;
             else if(turn>3)
                 player.energy = (player.energy + 4 > 10 ? 10:player.energy+4);
             EnergyUpdate();
         }
-        if (player.playerHand.Count == 0 && player.playerDeck.Count == 0 && player.playerBoard.Count == 0)
+        if ((player.playerHand.Count == 0 && player.playerDeck.Count == 0 && player.playerBoard.Count == 0)||(enemy.playerHand.Count == 0 && enemy.playerDeck.Count == 0 && enemy.playerBoard.Count == 0))
         {
             endGame = true;
             UIManager.ShowGameEndPanel();
         }
-        if (enemy.playerHand.Count == 0 && enemy.playerDeck.Count == 0 && enemy.playerBoard.Count == 0)
-        {
-            endGame = true;
-            UIManager.ShowGameEndPanel();
-        }
-        
     }
     private void Start()
     {
