@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
@@ -11,6 +10,7 @@ public class uiManager : MonoBehaviour
     [SerializeField] private GameObject gameEndPanel;
     [SerializeField] private TextMeshProUGUI gameEndText;
     [SerializeField] private Button restartButton;
+    [SerializeField] private Button QuitButton;
     public void ShowGameEndPanel()
     {
         gameEndPanel.SetActive(true);
@@ -21,9 +21,16 @@ public class uiManager : MonoBehaviour
     private void Start()
     {
         restartButton.onClick.AddListener(RestartScene);
+        QuitButton.onClick.AddListener(QuitGame);
     }
     void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void QuitGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
     }
 }
