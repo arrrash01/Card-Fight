@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool endGame = false;
     public uiManager UIManager;
     private List<Card> bombedCards=new List<Card>();
+    public TextMeshProUGUI playerEnergy, enemyEnergy;
     public bool PlayCard(Card pCard)
     {
         Debug.Log(pCard.cardName);
@@ -561,11 +562,7 @@ public class GameManager : MonoBehaviour
     }
     public void EnergyUpdate()
     {
-        GameObject textObject = GameObject.Find("PlayerEnergyText");
-        TextMeshProUGUI textMeshPro = textObject.GetComponent<TextMeshProUGUI>();
-        textMeshPro.text = player.energy.ToString();
-        textObject = GameObject.Find("EnemyEnergyText");
-        textMeshPro = textObject.GetComponent<TextMeshProUGUI>();
-        textMeshPro.text = enemy.energy.ToString();
+        playerEnergy.text = player.energy.ToString();
+        enemyEnergy.text = enemy.energy.ToString();
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayCard : MonoBehaviour
+public class PlayCard : MonoBehaviour, IPointerEnterHandler
 {
     public Card card;
     public GameManager gm;
@@ -20,7 +20,8 @@ public class PlayCard : MonoBehaviour
             }
         }
     }
-    void OnPointerEnter(PointerEventData eventData)
+    
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
