@@ -36,7 +36,7 @@ public class Player
     {
         for (int i = 0; i < playerHand.Count; i++)
         {
-            if (playerHand[i].name.Equals(name))
+            if (playerHand[i].cardName.Equals(name))
                 return playerHand[i];
         }
 
